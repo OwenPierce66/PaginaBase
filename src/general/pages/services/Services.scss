@@ -1,0 +1,116 @@
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+
+    span {
+      color: #0071e3;
+      font-weight: bold;
+    }
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+
+      .card {
+        flex: 0 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 20px;
+        text-align: left;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          margin-bottom: 15px;
+        }
+
+        h3 {
+          font-size: 20px;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          color: #666;
+        }
+      }
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      font-size: 24px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      &.prev {
+        left: -25px;
+      }
+
+      &.next {
+        right: -25px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-wrapper {
+      .carousel {
+        gap: 10px;
+
+        .card {
+          width: 250px;
+          padding: 15px;
+
+          h3 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .carousel-control {
+        display: none;
+        /* Oculta los botones en pantallas pequeñas */
+      }
+    }
+  }
+}

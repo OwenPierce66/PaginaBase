@@ -2,8 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './general/home'
+import Home from './general/pages/Home/home'
 import Navbar from './general/navigation/navbar'
+import TestImage from './general/pages/services/testing'
+import Services from './general/pages/services/Services'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,11 +35,13 @@ function App() {
     //   </p>
     // </>
     <div>
-      <div>
+      {/* <div>
         Hello
-      </div>
+      </div> */}
       <Navbar />
-      <Home />
+      {/* <Home /> */}
+      <Services />
+      <TestImage />
     </div>
   )
 }

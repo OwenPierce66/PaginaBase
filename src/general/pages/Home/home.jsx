@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/home.scss";
-import centerImage from "./images/image.png"; // Reemplaza con la ruta de tu imagen
+import "./home.scss";
+import centerImage from "../../images/image.png"; // Reemplaza con la ruta de tu imagen
 
 function Home() {
     return (
