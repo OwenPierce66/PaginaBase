@@ -1,45 +1,53 @@
 import React, { useState } from "react";
-// import "./styles.scss";
+import { Link } from "react-router-dom";
 import "./navigation.scss";
+
 const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const menuItems = [
+        { name: "Home", route: "/app/home" },
         {
             name: "Tienda",
+            route: "/app/vanity-home",
             options: ["Ver lo último", "Mac", "iPad", "iPhone", "Apple Watch", "Accesorios"],
         },
         {
-            name: "Mac",
+            name: "Services",
+            route: "/app/services",
             options: ["MacBook Air", "MacBook Pro", "Mac Mini", "iMac", "Mac Studio"],
         },
-        {
-            name: "iPad",
-            options: ["iPad Pro", "iPad Air", "iPad Mini", "iPad"],
-        },
-        {
-            name: "iPhone",
-            options: ["iPhone 14", "iPhone 13", "iPhone SE", "Accesorios"],
-        },
-        {
-            name: "Watch",
-            options: ["Apple Watch Series 8", "Apple Watch SE", "Apple Watch Ultra"],
-        },
-        // Agrega más items según sea necesario
+        { name: "Testing", route: "/app/testing" },
+        { name: "HellsVanity", route: "/app/hellsvanity" },
+        { name: "Hells", route: "/app/hells" },
     ];
 
     return (
-        <div className="navbar-container">
-            <nav className="navbar">
+        <nav className="navbar-container">
+            {/* Botón de menú para dispositivos móviles */}
+            <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                ☰
+            </div>
+
+            {/* Menú principal */}
+            <div className={`navbar ${isMobileMenuOpen ? "open" : ""}`}>
                 {menuItems.map((item, index) => (
                     <div
-                        className="navbar-item"
                         key={index}
+                        className="navbar-item"
                         onMouseEnter={() => setActiveMenu(item.name)}
                         onMouseLeave={() => setActiveMenu(null)}
                     >
-                        {item.name}
-                        {activeMenu === item.name && (
+                        {item.route ? (
+                            <Link to={item.route} className="navbar-link">
+                                {item.name}
+                            </Link>
+                        ) : (
+                            <span className="navbar-link">{item.name}</span>
+                        )}
+
+                        {activeMenu === item.name && item.options && (
                             <div className="dropdown">
                                 {item.options.map((option, idx) => (
                                     <a href="#" className="dropdown-item" key={idx}>
@@ -50,8 +58,8 @@ const Navbar = () => {
                         )}
                     </div>
                 ))}
-            </nav>
-        </div>
+            </div>
+        </nav>
     );
 };
 
