@@ -10,14 +10,21 @@ const Hells = () => {
         <div className="hells-page">
             {/* Hero Section */}
             <div className="hero-section">
+
                 <div className="left-section">
                     <div className="logo">
                         <img src={hv} alt="HV Logo" className="logo-image" />
                     </div>
-                    <h1 className="welcome-title">Bienvenidos a Hells Vanity</h1>
-                    <p className="subtitle">Expertos en Arte Corporal</p>
-                    <button className="explore-button">Explora</button>
-                </div>
+                    <div className="separar-letras">
+                        <h1 className="welcome-title">
+                            Bienvenidos
+                            <span className="line-break-mobile">a</span>
+                            Hells Vanity
+                        </h1>
+
+                        <p className="subtitle">Expertos en Arte Corporal</p>
+                        <button className="explore-button">Explora</button>
+                    </div></div>
                 <div className="right-section">
                     <img src={CenterImage} alt="Tattoo" className="tattoo-image" />
                     <div className="menu">
@@ -102,19 +109,38 @@ const Hells = () => {
                             <h3 className="service-name">Nombre del servicio</h3>
                             <div className="border"></div>
                             <span className="service-price">USD 80</span>
-                            <button className="reserve-button">Reservar ahora</button>
-                        </div>
+                            <a
+                                href="https://wa.me/6361316979?text=Hola%20quiero%20reservar%20el%20servicio%20de%20Nombre%20del%20servicio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="reserve-button"
+                            >
+                                Reservar ahora
+                            </a>                        </div>
                         <div className="service-card">
                             <h3 className="service-name">Nombre del servicio</h3>
                             <div className="border"></div>
                             <span className="service-price">USD 60</span>
-                            <button className="reserve-button">Reservar ahora</button>
-                        </div>
+                            <a
+                                href="https://wa.me/6361316979?text=Hola%20quiero%20reservar%20el%20servicio%20de%20Nombre%20del%20servicio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="reserve-button"
+                            >
+                                Reservar ahora
+                            </a>                        </div>
                         <div className="service-card">
                             <h3 className="service-name">Nombre del servicio</h3>
                             <div className="border"></div>
                             <span className="service-price">USD 35</span>
-                            <button className="reserve-button">Reservar ahora</button>
+                            <a
+                                href="https://wa.me/6361316979?text=Hola%20quiero%20reservar%20el%20servicio%20de%20Nombre%20del%20servicio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="reserve-button"
+                            >
+                                Reservar ahora
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -122,7 +148,7 @@ const Hells = () => {
 
             <div className="tattoo-services">
                 <section className="services-section">
-                    <h2 className="services-title">Servicios de Tatuajes</h2>
+                    <div className="services-title">Servicios de Tatuajes</div>
                     <p className="services-subtitle">Expresión a Través de la Tinta</p>
                     <div className="services-container">
                         <div className="service-card">

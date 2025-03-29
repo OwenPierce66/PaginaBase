@@ -21,6 +21,7 @@ const Navbar = () => {
         { name: "Testing", route: "/app/testing" },
         { name: "HellsVanity", route: "/app/hellsvanity" },
         { name: "Hells", route: "/app/hells" },
+        { name: "LesliSpa", route: "/app/leslispa" },
     ];
 
     return (

@@ -4,8 +4,8 @@ import centerImage from "../../images/image.png"; // Reemplaza con la ruta de tu
 
 function Home() {
     return (
-        <div className="header">
-            <nav className="navbar">
+        <div className="">
+            {/* <nav className="navbar">
                 <ul>
                     <li>Tiendas</li>
                     <li>Mac</li>
@@ -32,7 +32,7 @@ function Home() {
                 <p className="note">
                     Apple Intelligence ya está disponible en inglés de EE.UU.
                 </p>
-            </div>
+            </div> */}
         </div>
     );
 }

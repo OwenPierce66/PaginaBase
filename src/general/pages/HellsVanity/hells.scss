@@ -6,7 +6,7 @@
 
 .hero-section {
     display: flex;
-    height: 100vh;
+    // height: 100vh;
     background-color: #000;
     color: #fff;
 
@@ -15,7 +15,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 40px;
+
+        // padding: 40px;
+        .separar-letras {
+            padding: 16px;
+        }
 
         .logo {
             display: flex;
@@ -35,7 +39,7 @@
         }
 
         .welcome-title {
-            font-size: 48px;
+            font-size: 55px;
             font-weight: bold;
             line-height: 1.2;
             margin-bottom: 20px;
@@ -54,6 +58,7 @@
             color: #000;
             background-color: #fff;
             border: none;
+            width: 100%;
             border-radius: 5px;
             cursor: pointer;
 
@@ -65,8 +70,8 @@
 
     .right-section {
         flex: 1;
-        position: relative;
-        display: flex;
+        // position: relative;
+        // display: flex;
         justify-content: center;
         align-items: center;
 
@@ -109,6 +114,7 @@
     }
 }
 
+
 .blog-section {
     background-color: #000;
     color: #fff;
@@ -118,6 +124,7 @@
         font-size: 36px;
         font-weight: bold;
         margin-bottom: 30px;
+
         text-align: center;
     }
 
@@ -210,7 +217,10 @@
         .services-title {
             font-size: 36px;
             font-weight: bold;
-            margin-bottom: 20px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: center;
             color: #fff;
         }
 
@@ -300,9 +310,11 @@
         text-align: center;
 
         .services-title {
+            padding: 0 10px; // Añade espacio lateral si quieres
             font-size: 36px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-top: 33px;
+            margin-bottom: 16px;
         }
 
         .services-subtitle {
@@ -325,6 +337,7 @@
                 /* Ancho fijo para cada tarjeta */
                 text-align: left;
                 transition: transform 0.3s, border-color 0.3s;
+                text-align: center;
 
                 &:hover {
                     transform: translateY(-5px);
@@ -333,9 +346,10 @@
                 }
 
                 .service-heading {
-                    font-size: 20px;
+                    font-size: 33px;
                     font-weight: bold;
                     margin-bottom: 10px;
+                    text-align: center;
                 }
 
                 .service-subheading {
@@ -411,10 +425,11 @@
     margin-bottom: 20px;
 
     .logo-image {
-        width: 50px;
+        width: 255px;
         /* Ajusta el tamaño según sea necesario */
         height: auto;
         margin-right: 10px;
+        margin-bottom: -55px;
     }
 
     .logo-text {
@@ -424,8 +439,20 @@
     }
 }
 
+.line-break-mobile {
+    display: inline;
+}
+
 
 @media (max-width: 768px) {
+    .line-break-mobile {
+        display: block; // Esto hace que "a" quede solita en una línea
+    }
+
+    .menu {
+        display: none !important; // Oculta todo el contenedor de botones
+    }
+
     .hells-page {
         padding: 0px;
     }
@@ -433,16 +460,24 @@
     .hero-section {
         flex-direction: column;
         text-align: center;
+        height: none;
 
         .left-section {
             padding: 0px
         }
 
-        .left-section,
-        .right-section {
-            flex: none;
+        .tattoo-image {
             width: 100%;
-            // padding: 20px;
+            height: auto;
+            object-fit: contain; // Asegura que la imagen no se recorte
+            max-height: 80vh; // Evita que ocupe toda la pantalla
+        }
+
+        .right-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // padding: 10px;
         }
 
         .left-section .welcome-title {
@@ -459,7 +494,7 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100px;
-            margin: 16px;
+            margin: 0 5px;
         }
 
         .menu {
@@ -485,14 +520,35 @@
         }
     }
 
+
+
     .blog-section {
+        // padding: 55px;
+        margin-bottom: -55px;
+        padding-top: 0px;
+        padding: 33px;
+
+
+        .blog-title {
+            margin-top: 0px;
+        }
+
+
         .blog-cards {
             flex-direction: column;
             align-items: center;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
 
             .blog-card {
                 width: 100%;
                 margin-bottom: 20px;
+                min-width: 250px; // Ajusta según el tamaño que quieras
+                flex-shrink: 0;
+                scroll-snap-align: start;
             }
         }
     }

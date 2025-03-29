@@ -6,6 +6,7 @@ import TestImage from "../pages/services/testing";
 import Services from "../pages/services/Services";
 import HellsVanity from "../pages/HellsVanity/HellsVanity";
 import Hells from "../pages/HellsVanity/Hells";
+import LesliSpa from "../pages/leslispa/LesliSpa";
 
 const AuthLinks = () => {
     return (
@@ -22,6 +23,7 @@ const AuthLinks = () => {
             <Route path="testing" element={<TestImage />} />
             <Route path="services" element={<Services />} />
             <Route path="hells" element={<Hells />} />
+            <Route path="leslispa" element={<LesliSpa />} />
         </Routes>
     );
 };
